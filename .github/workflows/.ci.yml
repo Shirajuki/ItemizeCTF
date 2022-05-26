@@ -27,7 +27,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: ghcr.io
   deploy:
-    container: ghcr.io/Shirajuki/rcds:master
-    runs:
-      using: 'docker'
-      image: 'Dockerfile'
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run rCDS
+      uses: ghcr.io/Shirajuki/rcds:master
