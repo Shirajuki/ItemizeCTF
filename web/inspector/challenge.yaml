@@ -10,8 +10,7 @@ containers:
     image: "php:7.2-apache"
     volumes:
       - './www:/var/www/html'
-    ports:
-      - [80, 25746]
+    ports: [80, 25746]
     restart: always
     stop_signal: SIGKILLj
 

@@ -11,8 +11,7 @@ containers:
     build: .
     volumes:
         - '.:/app'
-    ports:
-        - [5000, 53311]
+    ports: [5000, 53311]
     restart: always
     stop_signal: SIGKILL  
 
