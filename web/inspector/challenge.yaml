@@ -2,7 +2,7 @@ name: inspector
 author: Shirajuki
 description: |-
   See if you can find the flag in the source code!
-  {{ link }}
+  [inspector](https://ctf.itemize.no:25746)
 flag: flag{inspect_me_like_123}
 
 containers:
@@ -11,11 +11,11 @@ containers:
     volumes:
       - './www:/var/www/html'
     ports:
-      - [80]
+      - [80, 25746]
     restart: always
     stop_signal: SIGKILLj
 
 expose:
   main:
-    - target: 25746
+    - target: 80
       http: inspector
