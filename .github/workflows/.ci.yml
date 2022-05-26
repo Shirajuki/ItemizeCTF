@@ -17,3 +17,6 @@ jobs:
       - name: Build and deploy docker image
         run: > 
            docker build --build-arg token=${RCDS_RCTF_TOKEN} . -t foobar -f Dockerfile 
+      - name: Run docker image
+        run: >
+           docker run foobar
