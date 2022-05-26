@@ -1,0 +1,32 @@
+# rcds.yaml
+docker:
+  image:
+    prefix: ghcr.io/shirajuki/rcds:latest
+
+flagFormat: flag\{[a-zA-Z0-9_,.'?!@$<>*:-]*\}
+
+defaults:
+  containers:
+    resources:
+      limits:
+        cpu: 100m
+        memory: 150Mi
+      requests:
+        cpu: 10m
+        memory: 30Mi
+
+backends:
+- resolve: rctf
+  options:
+    scoring:
+      minPoints: 100
+      maxPoints: 500  
+    sortOrder:
+      - sanity-check
+      - numbers
+      - based
+      - inspector
+      - robots
+      # Misc
+      # Crypto
+      # Web

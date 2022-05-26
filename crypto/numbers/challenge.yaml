@@ -1,0 +1,7 @@
+name: based
+author: Shirajuki
+description: |-
+  What does the numbers mean?
+flag: flag{NUMBERSISFUN}
+provide:
+  - numbers.txt
