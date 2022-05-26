@@ -1,0 +1,5 @@
+name: 'rCDS'
+description: 'Deploy rCDS'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
