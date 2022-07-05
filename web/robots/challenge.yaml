@@ -8,8 +8,6 @@ flag: flag{r0bots_4re_superduPer_fun}
 containers:
   main:
     build: .
-    volumes:
-      - ".:/app"
     ports: [5000]
 
 expose:

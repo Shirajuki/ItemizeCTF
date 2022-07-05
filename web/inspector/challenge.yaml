@@ -6,9 +6,7 @@ description: |-
 flag: flag{inspect_me_like_123}
 containers:
   main:
-    image: "php:7.2-apache"
-    volumes:
-      - "./www:/var/www/html"
+    build: .
     ports: [80]
 
 expose:

@@ -1,4 +1,4 @@
-name: 'CI'
+name: "CI"
 on:
   - push
   - pull_request
@@ -19,23 +19,21 @@ jobs:
       - name: Git checkout
         uses: actions/checkout@v2
 
-      - name: Docker build and publish to ghcr.io
-        uses: elgohr/Publish-Docker-Github-Action@v4
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v2
         with:
-          name: ${{ github.repository }}
+          registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-          registry: ghcr.io
 
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Git checkout
-        uses: actions/checkout@v2
+      - name: Build the inspector Docker image
+        run: |
+          docker build ./web/inspector --tag ghcr.io/shirajuki/itemizectf:inspector
+          docker run ghcr.io/shirajuki/itemizectf:inspector
+          docker push ghcr.io/shirajuki/itemizectf:inspector
 
-      - name: Build and deploy docker image
-        run: > 
-           docker build --build-arg token=${RCDS_RCTF_TOKEN} . -t foobar -f Dockerfile 
-      - name: Run docker image
-        run: >
-           docker run foobar
+      - name: Build the robots Docker image
+        run: |
+          docker build ./web/robots --tag ghcr.io/shirajuki/itemizectf:robots
+          docker run ghcr.io/shirajuki/itemizectf:robots
+          docker push ghcr.io/shirajuki/itemizectf:robots

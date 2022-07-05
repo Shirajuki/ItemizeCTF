@@ -19,7 +19,7 @@ backends:
   - resolve: k8s
     options:
       kubeContext: minikube
-      domain: ctf.itemize.no
+      domain: chall.ctf.itemize.no
       annotations:
         ingress:
           traefik.ingress.kubernetes.io/router.tls: "true"
