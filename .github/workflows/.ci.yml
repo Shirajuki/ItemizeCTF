@@ -35,3 +35,8 @@ jobs:
         run: |
           docker build ./web/robots --tag ghcr.io/shirajuki/itemizectf:robots
           docker push ghcr.io/shirajuki/itemizectf:robots
+
+      - name: Build the robots2 Docker image
+        run: |
+          docker build ./web/robots2 --tag ghcr.io/shirajuki/itemizectf:robots2
+          docker push ghcr.io/shirajuki/itemizectf:robots2
