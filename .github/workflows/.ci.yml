@@ -29,11 +29,9 @@ jobs:
       - name: Build the inspector Docker image
         run: |
           docker build ./web/inspector --tag ghcr.io/shirajuki/itemizectf:inspector
-          docker run ghcr.io/shirajuki/itemizectf:inspector
           docker push ghcr.io/shirajuki/itemizectf:inspector
 
       - name: Build the robots Docker image
         run: |
           docker build ./web/robots --tag ghcr.io/shirajuki/itemizectf:robots
-          docker run ghcr.io/shirajuki/itemizectf:robots
           docker push ghcr.io/shirajuki/itemizectf:robots

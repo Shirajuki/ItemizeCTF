@@ -1,5 +1,7 @@
 FROM python:3
 
+LABEL org.opencontainers.image.source="https://github.com/shirajuki/ItemizeCTF"
+
 WORKDIR /app
 
 ADD ./requirements.txt .
