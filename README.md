@@ -1,19 +1,16 @@
-# rCDS testing
+# rctf / rcds testing
 
-# Itemize KID CTF 2020 Challenges:
-This is the repo for all the Itemize KID CTF 2020 challenges.
-
-[https://kid2020.itemize.no/](https://kid2020.itemize.no/)
+This is the repo showcasing the structure needed in order to setup Itemize's forked rcds and rctf.
 
 ## Structure
-The folder structure is `<category>/<challenge>`.
+The folder structure for pushing the challenges to the rCTF platform is `<category>/<challenge>`.
 
-All the challenges contains a `description.md`, this contains the description presented to players on the CTF along with the flag and author.
+All the challenges contains a `challenge.yaml`, this contains the challenge title, description along with the flag and author, and if there are any running services.
 
-Challenges with a folder named `<cat>/chall>/files` are files that were presented to the players to download during the CTF.
+## Deployment of services:
 
-## Writeups:
-All challenges should contain either a `writeup.md` or a folder called `writeup` which has a description of how you could have solved the challenges.
+Deploying the challenges through rCDS will, however, not deploy the services but only the challenge description and it's files.
 
-## docker:
-Most challenges that were running services, e.g. web servers or pwn applications have a `docker-compose.yml` file which you can start by running `docker-compose up` to start the service localy for testing.
+Therefore a deploy script is found at the root folder so that the repository could be cloned in a challenge VM and then ran in order to deploy the services.
+
+Note that one has to manually make sure that the description of the challenges points to the correct ip and port the challenge is deployed to.

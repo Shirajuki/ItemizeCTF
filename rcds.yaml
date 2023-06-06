@@ -1,7 +1,8 @@
 # rcds.yaml
 docker:
   image:
-    prefix: ghcr.io/shirajuki/itemizectf
+    prefix: ghcr.io/itemizentnu/
+    template: kid23-challenges:{{ challenge.id }}
 
 flagFormat: flag\{[a-zA-Z0-9_,.'?!@$<>*:-]*\}
 
@@ -16,14 +17,6 @@ defaults:
         memory: 30Mi
 
 backends:
-  - resolve: k8s
-    options:
-      kubeContext: minikube
-      domain: chall.ctf.itemize.no
-      annotations:
-        ingress:
-          traefik.ingress.kubernetes.io/router.tls: "true"
-          traefik.ingress.kubernetes.io/router.middlewares: "nocontenttype@file"
   - resolve: rctf
     options:
       scoring:
@@ -35,6 +28,3 @@ backends:
         - based
         - inspector
         - robots
-        # Misc
-        # Crypto
-        # Web

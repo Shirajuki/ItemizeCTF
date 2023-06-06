@@ -3,13 +3,12 @@ author: Shirajuki
 description: |-
   This website has quotes from the robot Bender. 
   I <3 robots
-  {{ link }}
+  Site: [http://127.0.0.1:53311/](http://127.0.0.1:53311/)
 flag: flag{r0bots_4re_superduPer_fun}
 containers:
   main:
     build: .
     ports: [5000]
-
 expose:
   main:
     - target: 5000
